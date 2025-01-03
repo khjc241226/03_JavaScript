@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04_연산자 2</title>
+</head>
+<body>
+  <h3>비교 연산자</h3>
+
+  <!-- 
+    - 두 항의 값을 비교하는 연산자(이항 연산자)
+
+    [숫자(number)만 비교 가능한 연산자]
+
+    A > B : A가 B보다 크다(A가 B 초과)
+    A < B : A가 B보다 작다(A가 B 미만)
+    A >= B : A가 B보다 크거나 같다(A가 B 이상)
+    A <= B : A가 B보다 작거나 같다(A가 B 이하)
+
+
+    [자료형 관계 없이 비교 가능한 연산자]
+    
+    같다 
+      ==  : 동등 비교(자료형 관계 없이 값이 같은지 비교)
+      === : 동일 비교(자료형과 값 모두 같은지 비교)
+
+    같지 않다
+      !=  : 동등 비교
+      !== : 동일 비교
+  -->
+
+  <pre>
+    - 비교 연산자는
+     좌변, 우변을 비교하여
+     비교 결과가 맞을 경우 true,
+     아닐 경우 false를 반환하다!
+     (boolean 자료형 == true/false)
+  </pre>
+  <button onclick="check1()">비교 연산자 확인</button>
+
+
+  <hr>
+  <h3>
+    %(나머지), 비교 연산자를 이용해서 
+    홀짝 판별기 / 배수, 약수 판별기 만들기
+  </h3>
+
+  <h4>홀짝 판별기</h4>
+  숫자 입력 : <input type="number" id="input1">
+  <button onclick="oddEvenCheck()">홀짝 확인</button>
+
+
+  <hr>
+  <h4>배수 판별기</h4>
+  <input type="number" id="input2"> 
+  은/는
+  <input type="number" id="input3">
+  의 배수가 맞는가?
+  <span id="result2"></span>
+
+  <br>
+  <button onclick="multipleCheck()">배수 확인</button>
+
+
+  <hr>
+
+  <h3>복합 대입 연산자( +=, -=, *=, /=, %= )</h3>
+
+  <pre>
+    - 대입 연산자(=) : 오른쪽 값을 왼쪽 변수에 대입
+
+    - 복합 대입 연산자
+     기존 변수에 저장되어 있는 값에
+     새롭게 대입되는 값의 산술 연산 결과를 대입
+
+    ex) 
+    let temp = 10;
+
+    temp += 5; // temp === 15
+
+    (temp = temp + 5; 와 같음)
+  </pre>
+
+  <button onclick="compoundCheck()">복합 대입 연산 확인</button>
+
+
+  <hr>
+  <h1>논리 연산자(&&, ||, !)</h1>
+  <!-- 
+    & : 앰퍼센트
+    | : 버티칼바
+    ! : not(낫)
+  -->
+  <pre>
+    &&(AND) 연산자 ->  A && B
+
+    - A와 B 모두 true인 경우에만
+      A && B 연산 결과가 true (나머진 false)
+
+    - 글/말/문제에서
+    ~와, 그리고(이고), 이면서(면서), ~부터 ~까지, ~사이
+    포함되어 있다면 AND 연산자를 사용!
+
+    ex) 104는 100 이상의 숫자 이면서 짝수인가?
+     -> (104 >= 100)  &&  (104 % 2 === 0)   -> true
+  </pre>
+
+  <button onclick="andCheck()">AND 연산자 확인</button>
+
+   
+  <hr>
+  <pre>
+    || (OR 연산자)  ->  A || B
+
+    - A와 B 모두 false인 경우에만
+    A || B 연산 결과가 false (나머진 true)
+    
+    - 또는, ~이거나(거나) 
+    포함되어 있으면 OR 연산자 사용!
+
+    ex) 4는 10을 초과하거나 짝수인가?
+    (4 > 10) || (4 % 2 === 0)
+  </pre>
+
+  <button onclick="orCheck()">OR 연산자 확인</button>
+  
+
+  <hr>
+  <pre>
+    !(NOT) 연산자
+    - 논리 값을 반대로 바꾸는 연산자
+      (논리 부정 연산자)
+
+    !true -> false
+    !false -> true
+
+    ex)
+    !(true && false)  -> true
+
+                    홀수 판별
+    (10 > 5) || !(10 % 2 === 0) -> true
+
+    !!!!!true -> false
+  </pre>
+
+
+
+  <script src="../js/04_연산자2.js"></script>
+</body>
+</html>

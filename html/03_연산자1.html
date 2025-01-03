@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03_연산자 1</title>
+  <link rel="stylesheet" href="../css/03_연산자1.css">
+</head>
+<body>
+
+  <h1>연산자(Operator)</h1>
+  
+  <h3>산술 연산자</h3>
+  <pre>
+    +, -, *, /, %(modulo, mod : 나머지를 구하는 연산자)
+
+    6 / 4 = 1.5
+    6 % 4 = 2   (나머지)
+  </pre>
+
+  <div class="calculator">
+    <div class="row">
+      <label for="input1">첫 번째 값</label>
+      <input type="number" id="input1">
+    </div>
+
+    <div class="row">
+      <label for="input2">두 번째 값</label>
+      <input type="number" id="input2">
+    </div>
+
+    <div class="row btn-row">
+      <!--
+        button 태그의 type 기본값은 "submit"
+        -> form 태그로 감싸져 있지 않으면 제출 효과 X
+        (form 밖에 있으면 그냥 일반 버튼)
+      -->
+      <button onclick="plusFn()">+</button>
+      <button onclick="minusFn()">-</button>
+      <button onclick="multiFn()">*</button>
+      <button onclick="divFn()">/</button>
+      <button onclick="modFn()">%</button>
+    </div>
+
+    <div class="row">
+      <h2>
+        결과 : <span id="calcResult">0</span>
+      </h2>
+    </div>
+  </div>
+
+
+  <hr>
+  <h3>산술 연산자 응용</h3>
+  
+  <!-- 
+    개발(코딩) 공부 시 가장 중요한 것
+    - 개념 이해 (반복적으로 사용)
+    - 응용 (이해한 내용(코드)으로 무엇을 할 수 있을까) 
+  -->
+
+
+  <div class="calculator">
+    <div class="row">
+      <label for="input3">첫 번째 값</label>
+      <input type="number" id="input3">
+    </div>
+
+    <div class="row">
+      <label for="input4">두 번째 값</label>
+      <input type="number" id="input4">
+    </div>
+
+    <div class="row btn-row btn2">
+      <button onclick="doubleFn()">첫 번째 값 X2</button>
+      <button onclick="squareFn()">두 번째 값 제곱</button>
+
+      <button onclick="allOperationFn()">모든 산술 연산 결과 일괄 출력</button>
+    </div>
+
+    <div class="row">
+      <h2>
+        결과 : <span id="calcResult2">0</span>
+      </h2>
+    </div>
+  </div>
+  
+
+  <hr>
+  <h1>증가/감소 연산자(++, --)</h1>
+  <pre>
+    - 1씩 값을 증가/감소 시키는 연산자
+
+    - 합쳐서 "증감 연산자"라고 부르기도 함
+
+    - 단항 연산자의 한 종류(연산자가 적용될 숫자가 1개)
+
+    * 전위 연산(제일 먼저 1을 증가/감소)
+    ->  ++변수명, --변수명
+
+    * 후위 연산(제일 마지막에 1을 증가/감소)
+    -> 변수명++, 변수명--
+  </pre>
+
+  <div>
+    <button onclick="decrease()">-1</button>
+    <span id="countResult">0</span>
+    <button onclick="increase()">+1</button>
+  </div>
+
+  <script src="../js/03_연산자1.js"></script>
+</body>
+</html>
