@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05_조건문</title>
+  <link rel="stylesheet" href="../css/05_조건문.css">
+</head>
+<body>
+  <h1>조건문</h1>
+
+  <pre>
+    - 프로그래밍 코드가 해석되는 순서를 제어하는 "제어문" 중 한 종류
+
+    - 작성된 [조건식]에 따라서 수행되는 코드를 변경하는 구문
+
+    * 조건식 : 결과가 true 또는 false인 식
+    ex) 논리 연산자(&&, ||, !)
+        비교 연산자(>, ==, !=, ...)
+        함수 호출 결과로 boolean 반환
+        boolean 단독 작성
+  </pre>
+
+
+  <h3>if(만약에...) 문</h3>
+
+  <pre>
+    <code>
+      if(조건식) {
+        조건식이 true인 경우 수행할 코드;
+      }
+    </code>
+  </pre>
+
+  <h4>입력 받은 수가 양수(0보다 큰 수)인지 확인</h4>
+  <input type="number" id="input1">
+  <button onclick="check1()">양수인지 검사</button>
+
+  
+  <hr>
+  <h3>if(만약에) - else(아니면) 문</h3>
+
+  <pre>
+    <code>
+      if(조건식) {
+        조건식이 true인 경우 수행할 코드;
+      }
+
+      else { 
+        // else는 (조건식) 작성 X
+
+        조건식이 false인 경우 수행할 코드;
+      }
+    </code>
+  </pre>
+
+  <h4>1 ~ 100 사이의 난수를 발생 시켜 홀/짝 판별하기</h4>
+  <button onclick="check2()">난수 홀/짝 확인</button>
+
+
+  <hr>
+  <h3>
+    if(만약에) 
+    - else if(앞 조건이 아니라면 다른 조건)
+    ...
+    - else (모든 if, else if가 false인 경우)
+  </h3>
+
+  <pre>
+    <code>
+      if(조건식){
+        조건식이 true인 경우 수행할 코드;
+      }
+
+      else if(조건식){
+        앞선 if 또는 else if의 조건식이 false 이면서,
+        현재 else if는 true인 경우 수행할 코드;
+      }
+      ... 
+
+      else{
+        앞선 모든 if, else if가 false 인 경우 수행할 코드;
+      }
+    </code>
+  </pre>
+
+  <h4>양수, 음수, 0 판별기</h4>
+  <input type="number" id="input3">
+  <button onclick="check3()">양수, 음수, 0 판별하기</button>
+
+
+  <hr>
+  <h4>(실습문제) 어린이, 청소년, 성인 구분하기</h4>
+  <pre>
+    나이를 입력 받아
+
+     0 ~  13세 : 어린이
+    14 ~  19세 : 청소년
+    20 ~ 120세 : 성인
+    0 미만, 120 초과 : 잘못 입력 하셨습니다
+
+    메시지를 alert()를 이용해서 출력
+  </pre>
+
+  나이 : <input type="number" id="inputAge">
+  <button onclick="ageCheck()">확인</button>
+  <button onclick="ageCheck2()">확인2</button>
+
+
+  <hr>
+
+  <h3>Early Return</h3>
+  <pre>
+    return;  : 현재 실행 중인 함수를 "즉시 종료" 하고
+               호출한 곳으로 돌아감
+
+    if문 조건에
+    현재 수행하려는 기능(함수)의 예외 상황을 
+    조건식으로 작성하여
+    예외 상황 발생 시 즉시 함수를 종료(return;)하게 만드는 방법
+
+    장점 : 코드 들여쓰기가 줄어들고 간결해짐
+           유지보수성 향상
+
+    단점 : return 구문에 함수 내에 분산되어
+           함수 코드의 복잡도가 늘어난다
+  </pre>
+
+
+  <h4>두 수 A, B를 입력 받아 A가 B의 배수가 맞는지 확인</h4>
+  <pre>
+    [조건]
+    1) A, B 중 하나라도 입력되지 않을 경우
+     -> "입력되지 않은 값이 존재합니다"
+
+    2) A가 B 보다 작을 경우
+     -> "A가 B보다 작습니다"
+
+    3) A가 B보다 클 경우
+     -> 배수 판별 수행
+  </pre>
+
+  <div>
+    A : <input type="number" id="inputA">
+    <br>
+    B : <input type="number" id="inputB">
+    <br>
+    <button onclick="check4()">배수 판별</button>
+  </div>
+
+  <hr>
+
+  <h1>switch, case, default</h1>
+  <pre>
+    switch문 
+    - 식 하나의 결과로 많은 경우의 수를 처리할 때 
+      사용하는 조건문
+      
+    - 식의 결과와 일치하는 값을 가진 case 구문이 수행됨
+      ==  if/else if(A === B)  형태와 유사
+
+    - 식의 결과와 일치하는 case가 없을 경우 default 구문 수행
+      == else 와 유사
+
+    <code>
+      switch(식){ // 식의 결과 값은 정수 또는 문자열
+
+        case 결과1 : 결과 1의 수행 코드; break;
+        case 결과2 : 결과 2의 수행 코드; break;
+        case 결과3 : 결과 3의 수행 코드; break;
+        ...
+        default : 모든 case가 만족하지 못하는 경우 수행
+      }
+    </code>
+  </pre>
+
+  <hr>
+  <h3>입력된 수가 3,4,5 의 배수가 맞는지 확인</h3>
+
+  <input type="text" id="input5">
+  <button onclick="check5()">확인</button>
+
+
+  
+  <script src="../js/05_조건문.js"></script>
+</body>
+</html>
