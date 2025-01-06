@@ -175,11 +175,44 @@
   </pre>
 
   <hr>
-  <h3>입력된 수가 3,4,5 의 배수가 맞는지 확인</h3>
+  <h3>입력된 수가 3,4,5가 맞는지 확인</h3>
 
-  <input type="text" id="input5">
+  <input type="number" id="input5">
   <button onclick="check5()">확인</button>
 
+
+  <hr>
+  <h3>switch 문을 이용한 계산기</h3>
+  <div>
+    <div>
+      첫 번째 값 <input type="number" id="number1">
+    </div>
+    <div>
+      두 번째 값 <input type="number" id="number2">
+    </div>
+    <div>
+      <!-- 
+        전달 인자(Argument)
+        - 함수를 호출 할 때 () 안에 작성하는 값
+        - 호출된 함수의 매개 변수(Parameter)로 전달됨
+      -->
+      <button onclick="calc('+')">+</button>
+      <button onclick="calc('-')">-</button>
+      <button onclick="calc('*')">*</button>
+      <button onclick="calc('/')">/</button>
+      <button onclick="calc('%')">%</button>
+      <button onclick="calc('@')">@</button>
+    </div>
+    <h2>
+      결과 : <span id="calcResult">0</span>
+    </h2>
+  </div>
+
+
+  <hr>
+  <h3>입력 받은 월(달)의 알맞은 계절 출력(break; 관련 예제)</h3>
+  <input type="number" id="input6">
+  <button onclick="check6()">계절 확인</button>
 
   
   <script src="../js/05_조건문.js"></script>
