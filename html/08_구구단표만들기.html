@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>08_구구단표만들기</title>
+</head>
+<body>
+  <!-- 시맨틱 태그(div랑 똑같은데 의미있는 이름을 작성한 태그) -->
+  <header>
+    <h1>구구단 표 만들기</h1>
+  </header>
+
+  <main>
+    시작 단 : <input type="number" id="start">
+    종료 단 : <input type="number" id="end">
+    <button onclick="createTable()">만들기</button>
+
+    <table border="1">
+
+      <!-- 테이블의 머리(제목) 작성 영역 -->
+      <thead id="thead">
+        <tr>
+          <th>2단</th>
+          <th>3단</th>
+        </tr>
+      </thead>
+
+      <tbody id="tbody">
+        <tr>
+          <td>2 x 1 = 2</td>
+          <td>3 x 1 = 3</td>
+        </tr>
+        <tr>
+          <td>2 x 2 = 4</td>
+          <td>3 x 2 = 6</td>
+        </tr>
+        <tr>
+          <td>2 x 3 = 6</td>
+          <td>3 x 3 = 9</td>
+        </tr>
+        <tr>
+          <td>2 x 4 = 8</td>
+          <td>3 x 4 = 12</td>
+        </tr>
+        <tr>
+          <td>2 x 5 = 10</td>
+          <td>3 x 5 = 15</td>
+        </tr>
+        <tr>
+          <td>2 x 6 = 12</td>
+          <td>3 x 6 = 18</td>
+        </tr>
+        <tr>
+          <td>2 x 7 = 14</td>
+          <td>3 x 7 = 21</td>
+        </tr>
+        <tr>
+          <td>2 x 8 = 16</td>
+          <td>3 x 8 = 24</td>
+        </tr>
+        <tr>
+          <td>2 x 9 = 18</td>
+          <td>3 x 9 = 27</td>
+        </tr>
+      </tbody>
+
+
+    </table>
+
+  </main>
+  
+  <script src="../js/08_구구단표만들기.js"></script>
+</body>
+</html>
