@@ -147,5 +147,63 @@ function check6(){
     str = str.replace(num, '');
     console.log(str);
   }
-
 }
+
+// ---------------------------------------------------------
+
+/** UP & DOWN 게임 */
+function startGame(){
+
+  // Math.floor(실수) -> 소수점 내림 처림(정수로 변함) 
+  // Math.random() -> 0.0 ~ 1.0 사이 난수 발생 (1.0 미만)
+  
+  // 맞춰야되는 정답(1 ~ 200 사이 난수) 생성
+  const answer = Math.floor( Math.random() * 200 + 1);
+
+  // 테스트 후 삭제
+  console.log("정답 : ", answer);
+
+  // ---------------------------------------------------
+  
+  // 정답 시도 횟수를 세기 위한 변수 
+  let count = 0;
+  
+  // ---------------------------------------------------
+
+  while(true){ // 무한 반복
+
+    const input = prompt("1부터 200 사이 숫자 입력");
+    
+    // - 취소를 클릭한 경우 
+    if(input === null){
+      alert(`${count}번째에서 포기 하셨습니다(정답:${answer})`);
+      break; // 반복 종료
+    }
+
+    // - 미입력한 경우 (카운트 증가 X)
+    if(input.length === 0){
+      alert("다시 입력해주세요");
+      continue; // 카운트 증가 구문 수행 X, 다음 반복으로 넘어감
+    }
+    
+    const value = Number(input); // 입력된 값 number 타입 변경
+   
+    // - 잘못 입력한 경우(1 ~ 200 사이 X) - (카운트 증가 X)
+    if(value < 1 || value > 200){
+      alert("1 ~ 200 사이 숫자만 입력");
+      continue;
+    }
+
+    count++; // 정상 입력 시 카운트 증가
+
+    // 정답 판별 -> break
+
+
+    // UP / DOWN (단, 7회째면 실패)
+
+
+
+  } // while end
+  // 함수 끝
+}
+
