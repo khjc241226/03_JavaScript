@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11_요소 접근 방법</title>
+
+  <link rel="stylesheet" href="../css/11_요소접근방법.css">
+</head>
+<body>
+  <h1>DOM(Document Object Model)</h1>
+  <pre>
+    - HTML 문서를 객체 기반 형식으로 표현한 것
+     -> HTML 문서에 작성된 내용을 
+        트리 구조(계층형 구조)로 나타낸 객체
+        (구글에서 JS DOM 검색)
+    
+  </pre>
+
+  <hr>
+  <h1>DOM을 이용한 요소 접근 방법</h1>
+  <pre> 
+    1. id 속성 값을 이용한 접근
+     - document.getElementById("id 속성 값");
+
+     - document 아래 "id 속성 값"이 일치하는 요소를 찾아 반환
+      == 문서에서 id가 일치하는 요소 얻어오기
+
+    * HTML의 id(식별자) 속성 :
+      -> 중복 X 
+      -> 문서 전체에 하나만 존재(유일한 요소)
+      -> 단수(Element) 형태로 작성됨
+
+
+
+    2. class 속성 값을 이용한 접근
+      - document.getElementsByClassName("class 속성 값");
+       -> 클래스가 일치하는 모든 요소를 얻어와
+          (유사)배열 형태로 반환
+
+
+    3. tag 이름을 이용한 접근
+      - document.getElementsByTagName("tag명");
+       -> tag 이름이 일치하는 모든 요소를 얻어와
+          (유사)배열 형태로 반환
+
+
+    4. name 속성을 이용한 접근
+      - document.getElementsByName("name 속성 값");
+       -> name 속성 값이 일치하는 모든 요소를 얻어와
+          (유사)배열 형태로 반환
+
+
+    5. CSS 선택자를 이용한 접근
+      1) document.querySelector("CSS 선택자");
+        -> 선택자가 일치하는 요소 중 [첫 번째] 요소만 반환
+
+
+      2) document.querySelectorAll("CSS 선택자");
+        -> 선택자 일치하는 요소 [모두]를 얻어와  
+           (유사)배열 형태로 반환
+  </pre>
+
+  <hr>
+  <h3>class를 이용한 요소(DOM 객체) 접근 방법</h3>
+  <button onclick="classTest()">배경색 변경</button>
+  <button onclick="classInit()">배경색 초기화(흰색)</button>
+
+
+  <div class="cls-test">red</div>
+  <div class="cls-test">orange</div>
+  <div class="cls-test">yellow</div>
+  <div class="cls-test">green</div>
+  <div class="cls-test">blue</div>
+  <div class="cls-test">navy</div>
+  <div class="cls-test">purple</div>
+
+
+  <hr>
+  <h3>input에 입력된 숫자를 모두 얻어와 합계 구하기</h3>
+
+  <div class="flex-container direction-column">
+
+    <input type="number" class="cls-input">
+    <input type="number" class="cls-input">
+    <input type="number" class="cls-input">
+    <input type="number" class="cls-input">
+    <input type="number" class="cls-input">
+
+    <h4>정답 : <span id="sumResult">0</span> </h4>
+    <button onclick="classTest2()">합계 구하기</button>
+  </div>
+
+
+  <hr>
+  <h3>태그명으로 요소 접근하여 배경색 변경하기</h3>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+  </ul>
+  <button onclick="tagNameTest()">배경색 변경</button>
+
+
+  <hr>
+  <h3>name 속성으로 요소 접근하기</h3>
+  <pre>
+    - name 속성은 
+      input 또는 input 관련 요소(textarea, select)만
+      기본 속성으로 가지고 있다!
+
+    - checkbox, radio 버튼은 
+      name이 있어야지만 그룹으로 묶일 수 있다!
+  </pre>
+
+  <h4>취미 선택하기</h4>
+  <table>
+    <tr>
+      <td>
+        <input type="checkbox" name="hobby" id="game" value="게임">
+        <label for="game">게임</label>
+      </td>
+      <td>
+        <input type="checkbox" name="hobby" id="music" value="음악감상">
+        <label for="music">음악감상</label>
+      </td>
+      <td>
+        <input type="checkbox" name="hobby" id="video" value="영상시청">
+        <label for="video">영상시청</label>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <input type="checkbox" name="hobby" id="coding" value="코딩">
+        <label for="coding">코딩</label>
+      </td>
+      <td>
+        <input type="checkbox" name="hobby" id="book" value="독서">
+        <label for="book">독서</label>
+      </td>
+      <td>
+        <input type="checkbox" name="hobby" id="exercise" value="운동">
+        <label for="exercise">운동</label>
+      </td>
+    </tr>
+  </table>
+
+  <div class="name-result">선택한 취미 출력</div>
+  <button onclick="nameTest()">선택한 취미만 출력하기</button>
+
+
+
+
+  <script src="../js/11_요소접근방법.js"></script>
+</body>
+</html>
