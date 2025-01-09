@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12_이벤트</title>
+  <link rel="stylesheet" href="../css/12_이벤트.css">
+</head>
+<body>
+  <h1>Event(이벤트)</h1>
+  <pre>
+    * Event : 사건(행동, 동작, 행위), 사고, 일어난 일, 행사
+    -> 브라우저에서 할 수 있는 동작
+
+    ex) click, keydown, keypress, keyup,
+    mouseover, mouseout, mouseon, mouselaeve,
+    change, submit, focus, blur, drag ........
+
+
+  * Event Listener(이벤트 리스너, 이벤트 감지기)
+  
+   - 브라우저에서 발생하는 이벤트를 감지
+
+   - 이벤트가 감지 될 때 까지 대기
+
+   - 이벤트가 감지 되었을 때 연결된 기능(함수) 수행
+
+   - 이벤트 리스너는 요소 단위로 추가 가능
+
+   - 이벤트 리스너 추가 방법
+    1) on이벤트명
+      ex) onclick, onkeyup, onchange, ...
+
+    2) 요소.addEventListener("이벤트명", 수행할 함수);
+
+
+  * Event Handler(이벤트 핸들러, 이벤트 처리기)
+    
+   - 이벤트 리스너에 연결된 기능(함수)
+
+   - 이벤트가 감지 되었을 때
+     수행할 동작을 작성하는 함수
+  </pre>
+
+  
+  <hr>
+  <h3>인라인 이벤트 모델(Inline)</h3>
+
+  <pre>
+    - HTML 요소에 직접 
+    이벤트 리스너 = "이벤트 핸들러"
+    형식으로 작성하는 방법
+
+    - 최근에는 사용 빈도 낮아짐(가끔 사용)
+
+    - 인라인 이벤트 모델 작성 시
+     이벤트 핸들러 () 안에  this(이것)  라는 구문을 작성하면
+     이벤트 핸들러 함수로
+     이벤트가 발생된 요소가 전달된다!
+  </pre>
+
+  <div class="my-btn" onclick="check1(this)">
+    인라인 이벤트 모델 확인
+  </div>
+
+  <hr>
+  <h3>고전 이벤트 모델</h3>
+
+  <pre>
+    - HTML 요소에 이벤트 관련 코드를 직접 작성하지 않고
+
+      JS에서 DOM을 이용해
+      이벤트가 처리되기 원하는 요소가
+      가지고 있는 고유 이벤트 리스너에
+      이벤트 핸들러를 대입하는 방법
+
+    * 단점 : 
+      하나의 요소에 동일한 이벤트 리스너/핸들러 작성 불가
+      (마지막으로 대입된 이벤트 핸들러로 덮어쓰기 된다)
+  </pre>
+
+  <button id="testA">고전 이벤트 모델 확인</button>
+
+  <button id="testB">고전 이벤트 모델 제거</button>
+
+  <button id="testC">고전 이벤트 모델 단점 확인</button>
+
+  
+
+  <hr>
+  <h1>표준 이벤트 모델( 요소.addEventListener() )</h1>
+
+  <pre>
+    - W3C (웹 표준 재정 단체)에서
+     공식적으로 지정한 이벤트 모델
+
+    - 고전 이벤트 모델의 "단점" 
+      -> 이벤트 리스너가 종류별로 1개
+
+    - 표준 이벤트 모델의 "장점"
+      -> 이벤트 리스너를 원하는 만큼 추가할 수 있다!
+
+
+    [작성법]
+    요소.addEventListener("이벤트종류", 이벤트핸들러);
+  </pre>
+
+
+  <h3>클릭할수록 투명 + 클릭 횟수 증가</h3>
+  <div id="test1">0</div>
+
+
+  <hr>
+  <h3>클릭한 버튼에 작성된 색으로 배경색 변경하기</h3>
+
+  <div class="test2">
+
+    <!-- 배경색이 변경될 영역 -->
+    <div id="result2"></div>
+
+    <div class="btn-container">
+      <button>red</button>
+      <button>brown</button>
+      <button>orange</button>
+      <button>yellow</button>
+      <button>green</button>
+      <button>skyblue</button>
+      <button>blue</button>
+      <button>navy</button>
+      <button>purple</button>
+      <button>violet</button>
+      <button>gold</button>
+      <button>white</button>
+    </div>
+  </div>
+
+  <hr>
+
+  <h1>실습 문제</h1>
+
+  <div class="practice-container">
+    <div class="box">
+      <!-- 색상 변경 영역 -->
+      <div class="display"></div>
+      <input type="text" class="inputColor">
+    </div>
+
+    <div class="box">
+      <div class="display"></div>
+      <input type="text" class="inputColor">
+    </div>
+    
+    <div class="box">
+      <div class="display"></div>
+      <input type="text" class="inputColor">
+    </div>
+
+    <div class="box">
+      <div class="display"></div>
+      <input type="text" class="inputColor">
+    </div>
+
+    <div class="box">
+      <div class="display"></div>
+      <input type="text" class="inputColor">
+    </div>
+  </div>
+
+  <button id="changeBtn">변경하기</button>
+
+
+
+
+  
+  <script src="../js/12_이벤트.js"></script>
+</body>
+</html>
