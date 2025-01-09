@@ -157,6 +157,44 @@
   <button onclick="nameTest()">선택한 취미만 출력하기</button>
 
 
+  <hr>
+  <h1>CSS 선택자를 이용한 요소 접근 방법</h1>
+
+  <!-- target-div 라는 속성은 HTML의 기본 속성 X
+      (만들어낸 속성) -->
+  <div target-div="css-div">
+    <div>test1</div>
+    <div>test2</div>
+  </div>
+
+  <button onclick="cssTest()">css 선택자를 이용한 요소 접근</button>
+
+
+
+  <hr>
+  <h3>카카오톡 모양의 채팅 화면 만들기</h3>
+
+  <div class="chatting">
+    <div id="chattingBg">
+      <p>
+        <span>입력된 채팅1</span>
+      </p>
+      <p>
+        <span>입력된 채팅2</span>
+      </p>
+      <p>
+        <span>입력된 채팅3</span>
+      </p>
+    </div>
+
+    <div id="chattingInput">
+      <input type="text" id="userInput">
+      <button onclick="readValue()">입력</button>
+    </div>
+  </div>
+
+
+
 
 
   <script src="../js/11_요소접근방법.js"></script>
