@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>15_함수</title>
+</head>
+<body>
+
+  <h1>함수(Function, 기능)</h1>
+  <pre>
+    - 목표하는 결과를 만들기 위한 코드의 묶음
+
+    - 코드를 {} (블록)으로 묶어서 작성하고
+     붙여진 이름을 호출해서 사용
+
+
+    [함수 기본 작성법]
+    // []  : 생략 가능(안써도 됨)
+    // ... : n개 작성 가능(여러 개)
+    
+    function 함수명([매개변수...])  // 함수 선언
+    {
+      // 함수 정의
+    }
+
+    함수명([전달인자...]); // 함수 호출
+  </pre>
+
+  <hr>
+  <h1>전달 인자(Argument), 매개 변수(Parameter)</h1>
+  <pre>
+    * 전달 인자(Argument)
+      - 함수 "호출" 시 () 안에 작성되는 값
+      - 작성된 값은 함수의 매개 변수로 전달됨
+
+    * 매개 변수(Parameter)
+      - 함수 "선언" 시 () 안에 작성되는 변수
+      - "호출" 시 전달되는 값(전달 인자)를 저장하기 위한 변수
+      - 매개 변수는 함수의 지역 변수(함수에서만 사용 가능)      
+  </pre>
+
+  <input type="number" id="input1">
+  <button id="btn1">전달 인자, 매개 변수 확인</button>
+
+  <hr>
+  <h4>입력 받은 수 3개의 합 구하기</h4>
+  입력 1 : <input type="number" name="input2"> <br>
+  입력 2 : <input type="number" name="input2"> <br>
+  입력 3 : <input type="number" name="input2"> <br>
+  <button id="btn2">합계 구하기</button>
+
+  <hr>
+  <h4>입력 받은 값 A가 B의 배수가 맞는지 확인</h4>
+  A : <input type="number" name="input3"> 
+  <br>
+  B : <input type="number" name="input3">
+  <br>
+  <button id="btn3">배수 확인</button>
+
+
+  <hr>
+  <h1>return (반환)</h1>
+  <pre>
+    - 함수 내에 작성하는 명령어
+
+    - 현재 수행 중인 함수를 종료하고
+      호출한 곳으로 돌아가라!
+
+    - return;    -> 함수 종료, 호출한 곳으로 돌아감 
+
+    - return 값; -> 함수 종료, 호출한 곳으로 값을 가지고 돌아감 
+
+    (참고)
+    함수 정의 시 return을 작성하지 않은 경우
+    자동으로 함수 정의 끝 부분에 return 구문이 추가된다.
+  </pre>
+
+  <button id="btn4">return 확인 1</button>
+  <button id="btn5">return 확인 2</button>
+  <button id="btn6">return 확인 3</button>
+
+
+
+  <script src="../js/15_함수.js"></script>
+</body>
+</html>
