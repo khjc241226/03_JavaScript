@@ -163,7 +163,6 @@ btn5.addEventListener("click", function(){
 
 /* 함수를 반환하는 함수 */
 function createCounter(){
-
   let count = 5;
 
   const fn = function(){
@@ -196,4 +195,115 @@ btn6.addEventListener("click", function(){
 /* Closure(클로저)
   - 외부 함수에서
     종료된 내부 함수에 선언된 변수를 사용하는 기술
+
+  특징 1 : 데이터 은닉(private)
+  - 외부에서 직접 접근할 수 없는 상태의 변수를 만들 수 있음
+
+  특징 2 : 상태 유지
+  - 외부에서 함수를 수행한 후에도
+    내부 함수의 변수 값이 변한 상태로 유지됨
 */
+
+
+
+/* 매개 변수/return으로 익명 함수 전달 하기 */
+const btn7 = document.querySelector("#btn7");
+btn7.addEventListener("click", function(){
+
+  const resultFn = testFn7( function(a,b){ return a+b; } );
+
+  console.log("resultFn(3) : ", resultFn(3));
+});
+
+
+function testFn7(otherFn){
+  return function(num){
+    return otherFn(10, 20) * num;
+  }
+}
+
+
+/* 화살표 함수 */
+const arrows = document.querySelectorAll(".arrow"); // 버튼 4개
+
+// 화살표 함수 기본 형태
+arrows[0].addEventListener("click", ()=>{
+  
+  // 전달 받은 값 3개의 합을 반환하는 함수
+  const sumFn = (a, b, c) => {
+    return a + b + c;
+  }
+
+  alert(sumFn(50, 99, 1234));
+});
+
+
+// 매개 변수가 1개인 경우
+arrows[1].addEventListener("click", () => {
+
+  // 2제곱 반환
+  const square = num => { // () 생략
+    return num * num;
+  }
+
+  alert(square(999));
+});
+
+
+// {} 내 코드가 1줄만 작성된 경우
+arrows[2].addEventListener("click", () => {
+
+  const print 
+    = str => console.log(str); // (), {} 생략 가능
+  print("안녕하세요??");
+
+
+  const doubleFn = num => num * 2; // (), return, {} 생략 가능
+  print( doubleFn(3) ); // 6
+
+});
+
+
+// object 타입을 return 하는 경우
+arrows[3].addEventListener("click", () => {
+
+  // 배열 반환(배열은 {}, return 생략 가능!!)
+  const fn1 = () => [1,2,3];
+  console.log(fn1());
+
+  // * { k:v, k:v } === JS 객체
+
+  // 객체 반환(return, {} 생략 시 구문 오류 발생!)
+  const fn2 = () => { return {name:"홍길동", age:20} };
+  console.log(fn2());
+});
+
+
+
+/* function(){} 의 this 확인 */
+document.querySelector("#btn8").addEventListener("click", function(){
+  console.log(this); // 이벤트가 발생한 요소
+});
+
+/* () => {} 의 this 확인 */
+document.querySelector("#btn9").addEventListener("click", () => {
+  console.log(this); // === window 객체
+
+  /*  window 객체란??
+    - 창(브라우저) 자체를 나타내는 객체
+
+    - 창(브라우저) 관련 기능을 제공
+    (alert, prompt, setTimeout, setInterval, open등...)
+  */
+});
+
+
+
+/* 즉시 실행 함수 확인 */
+const str = "A";  // 전역 변수
+console.log(str); // A
+
+(function(){
+  const str = "B"; // {} 내 지역 변수
+  console.log(str); // B
+})();

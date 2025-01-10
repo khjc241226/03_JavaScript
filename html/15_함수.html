@@ -81,6 +81,115 @@
   <button id="btn6">return 확인 3</button>
 
 
+  <hr>
+
+  <h1>익명 함수(이름이 없는 함수)</h1>
+  <pre>
+    - 이름이 없는 함수 형태
+
+    - 이름이 없어서 필요한 곳에서 별도 호출 불가
+
+    - 정의 되자마자 실행
+     또는 변수, 매개변수, return, 이벤트 핸들러에 사용
+
+
+    [작성법]
+    function([매개변수...]){
+      // 함수 정의
+    }
+  </pre>
+
+  <button id="btn7">매개 변수/return으로 익명 함수 전달 하기</button>
+
+
+  <hr>
+  <h1 style="color:red;">화살표 함수(Arrow Function)</h1>
+  <pre>
+    - 익명 함수를 =>(화살표) 기호를 이용해서 간단히 작성하는 방법
+
+    익명 함수 :  function(){}
+
+    1. 기본 형태 : () => {}
+
+    2. 매개 변수가 1개인 경우
+       (e) => {} 
+         또는  
+       e => {}  // () 생략 가능
+
+    3. 매개 변수가 여러 개인 경우
+       (a, b, c) => {}   // () 생략 불가!
+
+  
+    4. 함수 정의 부분{} 내에 한 줄만 작성된 경우
+
+      () => { console.log(123); }
+      또는
+      () => console.log(123);    // {} 생략 가능
+
+
+      * {} 내 작성된 한 줄이 return 구문인 경우
+
+      () => { return 1 + 2; }
+      또는
+      () => 1 + 2    // {}, return 생략 가능
+
+
+    5. 함수 정의 부분에 return 한 줄만 있는데
+      return 되는 값이 object 타입인 경우(객체)
+      {}, return 생략이 불가능!
+      () => { return {name:"홍길동"} }
+  </pre>
+
+  <button class="arrow">화살표 함수 기본 형태</button>
+  <button class="arrow">매개 변수가 1개인 경우</button>
+  <button class="arrow">{} 내 코드가 1줄만 작성된 경우</button>
+  <button class="arrow">object 타입을 return 하는 경우</button>
+    
+  <hr>
+  <h1>function(){},  () => {} 차이점</h1>
+  <pre>
+    * this 참조 변수를 이벤트 핸들러 내부에서 사용 시
+
+    function(){} 의 this === 이벤트가 발생한 요소
+
+    () => {} 의 this === window 객체
+  </pre>
+
+  <button id="btn8">function(){} 의 this 확인</button>
+  <button id="btn9">() => {} 의 this 확인</button>
+
+  <hr>
+  <h1>즉시 실행 함수</h1>
+
+  <pre>
+    - 익명 함수가 정의 되자마자 실행하게 만드는 함수
+
+    [작성법]
+    (function(){})();
+
+    (()=>{})();
+
+    - 사용 이유
+    1) 변수명 중복 문제 해결
+    
+    const str = "A";  // 전역 변수
+
+    console.log(str); // A
+
+    (function(){
+      const str = "B"; // {} 내 지역 변수
+
+      console.log(str); // B
+    })();
+
+
+    2) 상대적으로 성능(속도) 우위를 가짐
+
+    1> 함수 정의(){}
+    2> 함수()
+
+    1> (function(){})()
+  </pre>
 
   <script src="../js/15_함수.js"></script>
 </body>
