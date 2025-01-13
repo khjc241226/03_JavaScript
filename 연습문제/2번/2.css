@@ -23,3 +23,4 @@
 }
 
 .number:hover {background-color: skyblue;}
+.number:active {background-color: orangered;}
