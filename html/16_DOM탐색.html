@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>16_DOM 탐색</title>
+</head>
+<body>
+  <h1>DOM(Document Objedct Model)</h1>
+  <pre>
+    HTML 문서를 객체 기반으로 표현한 것.
+    -> HTML에 작성된 내용을 트리 구조(계층 구조)로 나타냄.
+    -> 각각의 태그, TEXT, COMMENT등을 통틀어서 Node라고 함
+  </pre>
+
+  <hr>
+  <h1>Node 탐색</h1>
+  <pre>
+    1) 부모 노드 탐색 : parentNode
+
+    2) 첫 번째 자식 노드 탐색 : firstChild
+
+    3) 마지막 자식 노드 탐색 : lastChild
+
+    4) 모든 자식 노드 탐색 : childNodes  (배열 형태로 반환)
+     -> 원하는 위치에 존재하는 자식 노드 탐색 : childNodes[index]
+
+    <!-- Sibling : 형제, 자매, 남매 -->
+    5) 이전 형제 노드 탐색 : previousSibling
+
+    6) 다음 형제 노드 탐색 : nextSibling
+  </pre>
+
+  <button id="checkBtn1">Node 탐색 확인</button>
+
+  <ul id="test1">
+    <!-- Node 확인 테스트 주석입니다. -->
+
+    <li id="li1">1번</li>
+    <li class="cls">2번</li>
+    <!-- 중간 주석 -->
+    <li style="background-color: yellow;">3번</li>
+    <li>
+      <a href="#">4번</a>
+    </li></ul>
+
+  <hr>
+
+  <h1>Element(요소) 탐색 방법</h1>
+  <pre>
+    Node : 요소, 주석, 내용(TEXT)
+
+    Element : 요소 (Node의 하위 개념)
+
+
+    [Element만 탐색하는 방법]
+
+    children : 자식 요소만 모두 선택 (배열)
+    parentElement : 부모 요소 선택
+
+    firstElementChild : 첫 번째 자식 요소 선택
+    lastElementChild  : 마지막  자식 요소 선택
+
+    previousElementSibling : 이전 형제 요소 선택
+    nextElementSibling     : 다음 형제 요소 선택
+  </pre>
+
+
+  <button id="checkBtn2">Element 탐색 확인</button>
+
+  <ul id="test2">
+    <!-- Element 확인 테스트 주석입니다. -->
+
+    <li id="li2">1번</li>
+    <li class="cls">2번</li>
+    <!-- 중간 주석 -->
+    <li style="background-color: yellow;">3번</li>
+    <li>
+      <a href="#">4번</a>
+    </li></ul>
+
+  
+  <script src="../js/16_DOM탐색.js"></script>
+</body>
+</html>
