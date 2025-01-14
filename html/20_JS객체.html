@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>20_JS 객체</title>
+</head>
+<body>
+  <h1>객체 (Object)</h1>
+
+  <pre>
+    - 속성과 기능으로 이루어진 것
+     속성 == 변수(필드) == 값
+     기능 == 함수(메서드) 
+  </pre>
+
+  <hr>
+  <h1>JavaScript Object</h1>
+  <pre>
+    - {} (블록) 내에 Key : Value 형태의 한 쌍으로 
+      데이터/함수가 저장된 형태
+
+    - Key : 변수명(필드명), 함수명(메서드명)  -> 이름
+    - Value : 변수에 저장된 값, 함수 정의     -> 대입되는 것
+
+    - { K:V, K:V, K:V, ...}
+
+    ----------------------------------------------
+
+    [JS 객체 생성 방법]
+
+    1. {} : JS 객체 리터럴을 이용한 생성 방법
+
+    2. new Object() : 새 객체 생성 (=== {})
+
+    3. 생성자 함수 : 생성자 정의 + new 연산자로 객체 생성
+
+    * 리터럴(Literal)
+    - 고정된 값을 나타내기 위한 표기법
+     == 코드에 직접 값을 작성하는 방법
+
+     string   -> "", ''
+     number   -> 3, +3, -3, 3.0
+     boolean  -> true, false
+     array    -> []
+     object   -> {}
+  </pre>
+
+  <button id="btn1">JS 객체 생성 + 다루기</button>
+  <button id="btn2">JS 객체에 메서드(함수) 추가</button>
+
+
+  <hr>
+  <h1>생성자(Constructor) 함수</h1>
+  <pre> 
+    * 생성자 함수
+     - 정의된 내용대로 객체를 생성하고 
+       생성할 때 작성된 기능을 수행하는 함수 
+
+    * 생성자 함수 사용 이유
+     - 동일한 형태를 가지는 객체가 다수 필요한 경우
+       객체 생성 구문을 미리 만들어 호출해서 사용해
+       코드 길이 감소, 재사용성 증가 효과 창출
+
+    [작성법]
+    function 객체명([매개변수...]){
+    
+      // 객체명은 무조건 대문자로 시작
+
+      this.필드명 = 값;
+      this.메서드명 = function(){}
+      ...
+    }
+
+    // 여기서 this : 생성자 함수로 만들어진 객체를 나타냄
+
+    
+
+    [생성자 함수 사용법]
+    const 객체명1 = new 생성자함수명([매개변수]);
+    const 객체명2 = new 생성자함수명([매개변수]);
+    const 객체명3 = new 생성자함수명([매개변수]);
+
+    * new 연사자 : 
+     - (메모리에) 생성자 함수에 정의된 내용대로 
+       새로운 객체를 생성
+  </pre>
+
+  <hr>
+  <h3>학생 기록부</h3>
+  <table border="1" style="border-collapse: collapse;">
+    <tr>
+      <th>학년</th>
+      <td>
+        <input type="number" id="inputGrade">
+      </td>
+
+      <th>반</th>
+      <td>
+        <input type="number" id="inputBan">
+      </td>
+    </tr>
+
+    <tr>
+      <th>번호</th>
+      <td>
+        <input type="number" id="inputNumber">
+      </td>
+
+      <th>이름</th>
+      <td>
+        <input type="text" id="inputName">
+      </td>
+    </tr>
+
+    <tr>
+      <th colspan="4">
+        <button id="addStudent">학생 추가</button>
+      </th>
+    </tr>
+  </table>
+
+  <hr>
+  <!-- 추가한 학생 목록 모두 출력 -->
+  <button id="selectStudent">학생 조회</button>
+
+  <table border="1" style="border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th>행 번호</th>
+        <th>이름</th>
+        <th>학년</th>
+        <th>반</th>
+        <th>번호</th>
+      </tr>
+    </thead>
+
+    <tbody id="tbody"></tbody>
+
+    <tfoot>
+      <th colspan="2">총 인원 수</th>
+      <th colspan="3" id="total">0명</th>
+    </tfoot>
+  </table>
+
+  
+  <script src="../js/20_JS객체.js"></script>
+</body>
+</html>
