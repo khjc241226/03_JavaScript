@@ -114,7 +114,3 @@ for(let i = 0 ; i < userBtn.length; i++){
 }
 
 
-
-
-// 컴퓨터 가위, 바위, 보 선택 함수
-
