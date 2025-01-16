@@ -1,0 +1,35 @@
+/* big 클래스를 가진 요소의 스타일 변경 */
+.big{ 
+  width: 50px;
+  height: 50px;
+}
+
+.bg-skyblue{
+  background-color: skyblue;
+}
+
+/* classList 테스트 */
+.container-3{
+  width: 400px;
+  height: 100px;
+  border: 2px solid #cccccc;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* hidden 클래스를 가진 요소를 화면에 표시 X */
+.hidden{  display: none; }
+
+.bg-red   { background-color: red;}
+.bg-yellow{ background-color: yellow;}
+.bg-green { background-color: green;}
+
+
+.test{
+  background-color: greenyellow;
+  border: 5px double steelblue;
+  width: 300px;
+  height: 150px;
+}

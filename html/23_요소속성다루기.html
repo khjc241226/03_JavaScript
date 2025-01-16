@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>23_요소 속성 다루기</title>
+  <link rel="stylesheet" href="../css/23_요소속성다루기.css">
+</head>
+<body>
+  <h1>요소 속성(Attribute) 관련 메서드</h1>
+
+  <pre>
+    1. 요소.getAttribute("속성명") : 속성 값 얻어오기
+
+    2. 요소.setAttribute("속성명", "속성값")
+      -> 요소에 새로운 속성 추가 
+        (이미 같은 속성이 존재하면 덮어쓰기)
+
+    3. 요소.removeAttribute("속성명") : 속성 제거하기
+
+    4. 요소.hasAttribute("속성명") : 속성 존재 여부 확인
+  </pre>  
+
+  <input id="input1" name="nameTest">
+  <button id="btn1">속성 관련 메서드 확인</button>
+
+
+  <hr>
+  <h1>요소 속성에 직접 접근</h1>
+  <pre>
+    - DOM 요소에 노출되어있는 속성은
+      "요소.속성명" 으로 얻어오기/세팅하기 모두 가능!
+
+
+    * 직접 접근 방법
+    [장점]
+    1. 짧고 간결함
+    2. Attribute() 관련 메서드보다 속도적 우위
+    3. 표준 HTML에 대해 직접 접근 가능
+      -> HTML 요소가 실제로 제공하는 속성을 다룰 수 있다
+    
+    [단점]
+    1. DOM 요소별 속성 파악이 필요
+    2. 일관성 부족
+
+    ----------------------------------------------
+
+    * Attribute() 관련 메서드 
+    [장점]
+    1. 속성 파악 불필요(있으면 세팅, 없으면 만들어 넣어서 세팅)
+    2. 일관성
+
+    [단점]
+    1. 길다
+    2. 느리다
+  </pre>
+
+  <input type="text" id="input2" value="input2 입니다" name="nameTwo">
+  <div id="div2">div2 입니다</div>
+  <button id="btn2">요소 직접 접근 확인</button>
+
+
+  <hr>
+  <h1>class 관련 속성(classList)</h1>
+  <pre>
+    * class 속성의 특징
+    1) 모든 HTML 요소가 가질 수 있는 속성
+    2) 중복 가능
+    3) 한 요소가 여러 클래스를 가질 수 있음
+
+    [tip]
+    attribute : HTML 요소 속성
+    property  : JS 객체 속성
+
+    * 요소.classList
+     - 요소의 class를 조작하기 위한 속성(property)
+
+    1) 요소.classList.add("클래스1" [, ...])
+     -> 요소에 클래스를 추가 (여러 클래스 한 번에 추가 가능)
+     -> 요소에 class가 존재하고 있으면 이어서 추가
+        (덮어쓰기 X)
+
+
+    2) 요소.classList.remove("클래스1" [, ...])
+     -> 요소에 클래스를 제거 (여러 클래스 한 번에 제거 가능)
+
+
+    3) 요소.classList.toggle("클래스명")
+     -> 요소에 클래스가 있으면 제거, 없으면 추가
+
+
+    4) 요소.classList.contains("클래스명")
+     -> 요소에 클래스가 포함되어 있으면 true, 없으면 false
+
+
+    5) 요소.classList.replace("기존 클래스명", "새 클래스명")
+     -> 요소가 가지고 있는 
+     "기존 클래스명" 을  "새 클래스명"으로 변경
+  </pre>
+
+  <div>
+    <button class="btn">red</button>
+    <button class="btn">yellow</button>
+    <button class="btn">green</button>
+  </div>
+
+  <div class="container-3">
+
+    <button id="addBtn">추가</button>
+
+    <div class="btn-container hidden">
+      <button id="modifyBtn" class="bg-green">수정</button>
+      <button>삭제</button>
+      <button id="closeBtn">종료</button>
+    </div>
+  </div>
+
+
+
+
+  <script src="../js/23_요소속성다루기.js"></script>
+</body>
+</html>

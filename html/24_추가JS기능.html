@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>24_추가 JS 기능</title>
+</head>
+<body>
+  <h1>for문 정리</h1>
+  <pre>
+    [1] 일반 for문 -> 어떤 상황이던지 모두 사용 가능
+
+    for(초기식 ; 조건식 ; 증감식){
+      // 조건식 true일 반복 수행할 코드
+    }
+
+
+    [2] for of 구문 -> 모든 요소 접근이 필요한 경우(순차 접근)
+
+    * 반복 가능 객체 === iterator를 가지고 있는 객체
+    ex) Array, NodeList, HTMLCollection 등 (유사 배열)
+
+    for(let 변수 of 반복가능객체){
+      // let 변수 === 0번 인덱스 부터 하나씩 꺼낸 값/객체
+
+      // 반복 수행할 코드
+    }
+
+
+    [3] 배열/NodeList.forEach(() => {})
+
+    - forEach() 메서드를 제공하는 객체만 사용 가능!!
+    ex) Array, NodeList 등
+
+    장점 : for of 구문 + index 확인 가능
+
+    배열/NodeList.forEach((item, index) => {
+
+      // item : 0번 인덱스 부터 끝까지 1개씩 꺼내온 요소
+      // index : 현재 접근 중인 index 번호
+    });
+
+
+    [4] for in 구문 -> Object 타입만 사용 가능
+    ex) JS 객체, Array 등
+
+    - 객체가 가진 모든 key 값을 순차 접근할 때 사용
+
+    for(let key변수 in 객체){
+      // key변수 : key를 하나씩 꺼내와 저장한 변수
+    }
+  </pre>
+
+  <button id="btn1">for in 확인하기</button>
+
+  <hr>
+  <h1>구조 분해 할당</h1>
+  <pre>
+    - 배열이나 객체에 저장된 값을 쉽게 추출하여
+      지정된 변수에 대입하는 문법
+
+    - 가독성 증가를 위해서 사용
+
+    <hr>
+
+    [배열 + 구조 분해 할당]
+    const fruits = ['사과', '바나나', '오렌지'];
+
+    const first  = fruits[0]; // '사과'
+    const second = fruits[1]; // '바나나'
+    const thrid  = fruits[2]; // '오렌지'
+
+    // 위의 변수 선언/대입 구문을 구조 분해 할당으로 변경
+    const [first, second, third] = fruits;
+
+
+
+    [객체 + 구조 분해 할당]
+    const person = {name : "홍길동", age : 25, height : 180};
+
+    // 기존 방법
+    const name   = person.name;
+    const age    = person.age;
+    const height = person.height;
+
+    // 구조 분해 할당
+    const {name, age, height}  = person;
+  </pre>
+
+  <button id="btn2">구조 분해 할당 확인</button>
+
+
+  <hr>
+  <h1>...(전개,나열) 연산자</h1>
+  <pre>
+    - 객체나 배열의 요소를 
+     개별적으로 분리, 결합할 때 사용하는 연산자
+
+    ex) 
+    const arr = [1,2,3];
+    // ...arr  === [1,2,3] 에서 []기호를 뺀 모습
+
+    - 언제 사용???
+     배열 : 배열 복사, 배열 결합, 배열 요소 추가
+
+     객체 : 객체 복사, 객체 병합, 속성 덮어 쓰기
+  </pre>
+
+  <button id="btn3">배열 + ... 연산자</button>
+  
+  <button id="btn4">객체 + ... 연산자</button>
+
+
+  <script src="../js/24_추가JS기능.js"></script>
+</body>
+</html>
